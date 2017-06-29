@@ -79,11 +79,45 @@ function df_scss_vars( $vars, $handle ) {
 	$vars['color-primary'] = isset( $alchemists_data['color-primary'] ) ? $alchemists_data['color-primary'] : '#ffdc11';
 	$vars['color-primary-darken'] = isset( $alchemists_data['color-primary-darken'] ) ? $alchemists_data['color-primary-darken'] : '#ffcc00';
   $vars['color-dark'] = isset( $alchemists_data['color-dark'] ) ? $alchemists_data['color-dark'] : '#1e2024';
-  $vars['color-dark-lighten'] = isset( $alchemists_data['color-dark-lighten'] ) ? $alchemists_data['color-dark-lighten'] : '#292c31';;
-  $vars['color-gray'] = isset( $alchemists_data['color-gray'] ) ? $alchemists_data['color-gray'] : '#9a9da2';;
-  $vars['color-2'] = isset( $alchemists_data['color-2'] ) ? $alchemists_data['color-2'] : '#31404b';;
-  $vars['color-3'] = isset( $alchemists_data['color-3'] ) ? $alchemists_data['color-3'] : '#ff7e1f';;
-  $vars['color-4'] = isset( $alchemists_data['color-4'] ) ? $alchemists_data['color-4'] : '#9a66ca';;
+  $vars['color-dark-lighten'] = isset( $alchemists_data['color-dark-lighten'] ) ? $alchemists_data['color-dark-lighten'] : '#292c31';
+  $vars['color-gray'] = isset( $alchemists_data['color-gray'] ) ? $alchemists_data['color-gray'] : '#9a9da2';
+  $vars['color-2'] = isset( $alchemists_data['color-2'] ) ? $alchemists_data['color-2'] : '#31404b';
+  $vars['color-3'] = isset( $alchemists_data['color-3'] ) ? $alchemists_data['color-3'] : '#ff7e1f';
+  $vars['color-4'] = isset( $alchemists_data['color-4'] ) ? $alchemists_data['color-4'] : '#9a66ca';
+
+
+  // Typography
+
+  // Body
+  if ( $alchemists_data['alchemists__custom_body_font'] ) {
+    $vars['font-family-base'] = isset( $alchemists_data['alchemists__typography-body']['font-family'] ) ? $alchemists_data['alchemists__typography-body']['font-family'] : 'Source Sans Pro, sans-serif';
+    $vars['base-font-size'] = isset( $alchemists_data['alchemists__typography-body']['font-size'] ) ? $alchemists_data['alchemists__typography-body']['font-size'] : '15px';
+    $vars['base-line-height'] = isset( $alchemists_data['alchemists__typography-body']['line-height'] ) ? $alchemists_data['alchemists__typography-body']['line-height'] : '26px';
+    $vars['body-font-weight'] = isset( $alchemists_data['alchemists__typography-body']['font-weight'] ) ? $alchemists_data['alchemists__typography-body']['font-weight'] : '400';
+    $vars['body-font-color'] = isset( $alchemists_data['alchemists__typography-body']['color'] ) ? $alchemists_data['alchemists__typography-body']['color'] : '#9a9da2';
+  }
+
+
+  if ( $alchemists_data['alchemists__custom_heading_font'] ) {
+
+    // Font Family Accent
+    $vars['font-family-accent'] = isset( $alchemists_data['font-family-accent']['font-family'] ) ? $alchemists_data['font-family-accent']['font-family'] : 'Montserrat';
+
+    // Headings
+    $vars['headings-font-family'] = isset( $alchemists_data['headings-typography']['font-family'] ) ? $alchemists_data['headings-typography']['font-family'] : 'Montserrat';
+    $vars['headings-color'] = isset( $alchemists_data['headings-typography']['color'] ) ? $alchemists_data['headings-typography']['color'] : '#31404b';
+  }
+
+
+  // Preloader
+  if ( $alchemists_data['alchemists__opt-custom_pageloader'] ) {
+
+    $vars['preloader-bg'] = isset( $alchemists_data['alchemists__opt-preloader-bg'] ) ? $alchemists_data['alchemists__opt-preloader-bg'] : $vars['color-dark'];
+    $vars['preloader-size'] = isset( $alchemists_data['alchemists__opt-preloader-size']['width'] ) ? $alchemists_data['alchemists__opt-preloader-size']['width'] : '32px';
+    $vars['preloader-color'] = isset( $alchemists_data['alchemists__opt-preloader-color'] ) ? $alchemists_data['alchemists__opt-preloader-color'] : $vars['color-primary'];
+    $vars['preloader-color-secondary'] = isset( $alchemists_data['alchemists__opt-preloader-color-secondary'] ) ? $alchemists_data['alchemists__opt-preloader-color-secondary'] : 'rgba(255,255,255, 0.15)';
+    $vars['preloader-spin-duration'] = isset( $alchemists_data['alchemists__opt-preloader-spin-duration'] ) ? $alchemists_data['alchemists__opt-preloader-spin-duration'] . 's' : '0.8s';
+  }
 
 	return $vars;
 }

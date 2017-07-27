@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */

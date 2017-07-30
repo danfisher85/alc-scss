@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -84,6 +84,20 @@ function df_scss_vars( $vars, $handle ) {
   $vars['color-2'] = isset( $alchemists_data['color-2'] ) ? $alchemists_data['color-2'] : '#31404b';
   $vars['color-3'] = isset( $alchemists_data['color-3'] ) ? $alchemists_data['color-3'] : '#ff7e1f';
   $vars['color-4'] = isset( $alchemists_data['color-4'] ) ? $alchemists_data['color-4'] : '#9a66ca';
+
+  // Body Background
+  $vars['body-bg-color'] = ( isset( $alchemists_data['alchemists__body-bg']['background-color'] ) && !empty( $alchemists_data['alchemists__body-bg']['background-color'] )) ? $alchemists_data['alchemists__body-bg']['background-color'] : '#edeff4';
+
+  // Header Background
+  $vars['header-top-bg'] = ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) ? $alchemists_data['alchemists__header-top-bar-bg'] : $vars['color-dark-lighten'];
+  $vars['header-bg'] = ( isset( $alchemists_data['alchemists__header-secondary-bg'] ) && !empty( $alchemists_data['alchemists__header-secondary-bg'] ) ) ? $alchemists_data['alchemists__header-secondary-bg'] : $vars['color-dark'];
+  $vars['header-secondary-bg'] = ( isset( $alchemists_data['alchemists__header-secondary-bg'] ) && !empty( $alchemists_data['alchemists__header-secondary-bg'] ) ) ? $alchemists_data['alchemists__header-secondary-bg'] : $vars['color-dark'];
+  $vars['header-primary-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) )  ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark-lighten'];
+
+  // Footer Background
+  $vars['footer-widgets-bg'] = ( isset( $alchemists_data['alchemists__footer-widgets-bg']['background-color'] ) && !empty( $alchemists_data['alchemists__footer-widgets-bg']['background-color'] )) ? $alchemists_data['alchemists__footer-widgets-bg']['background-color'] : $vars['color-dark'];
+  $vars['footer-secondary-bg'] = ( isset( $alchemists_data['alchemists__footer-secondary-bg'] ) && !empty( $alchemists_data['alchemists__footer-secondary-bg'] ) ) ? $alchemists_data['alchemists__footer-secondary-bg'] : $vars['color-dark'];
+  $vars['footer-secondary-side-bg'] = ( isset( $alchemists_data['alchemists__footer-side-decoration-bg'] ) && !empty( $alchemists_data['alchemists__footer-side-decoration-bg'] ) ) ? $alchemists_data['alchemists__footer-side-decoration-bg'] : $vars['color-primary'];
 
 
   // Typography

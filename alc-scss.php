@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -203,16 +203,16 @@ function df_scss_vars( $vars, $handle ) {
   // Navigation
   if ( $alchemists_data['alchemists__custom_nav-font'] ) {
     $vars['nav-font-family'] = ( isset( $alchemists_data['alchemists__nav-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-font']['font-family'] : 'Montserrat, sans-serif';
-    $vars['nav-text-transform'] = ( isset( $alchemists_data['alchemists__nav-font']['text-transform'] ) && !empty( isset( $alchemists_data['alchemists__nav-font']['text-transform'] ) ) ) ? $alchemists_data['alchemists__nav-font']['text-transform'] : 'uppercase';
+    $vars['nav-text-transform'] = ( isset( $alchemists_data['alchemists__nav-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-font']['text-transform'] : 'uppercase';
     $vars['nav-font-weight'] = ( isset( $alchemists_data['alchemists__nav-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-font']['font-weight'] : '700';
-    $vars['nav-font-style'] = ( isset( $alchemists_data['alchemists__nav-font']['font-style'] ) && !empty( isset( $alchemists_data['alchemists__nav-font']['font-style'] ) ) ) ? $alchemists_data['alchemists__nav-font']['font-style'] : 'normal';
-    $vars['nav-font-size'] = ( isset( $alchemists_data['alchemists__nav-font']['font-size'] ) && !empty( isset( $alchemists_data['alchemists__nav-font']['font-size'] ) ) ) ? $alchemists_data['alchemists__nav-font']['font-size'] : '12px';
+    $vars['nav-font-style'] = ( isset( $alchemists_data['alchemists__nav-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-style'] ) ) ? $alchemists_data['alchemists__nav-font']['font-style'] : 'normal';
+    $vars['nav-font-size'] = ( isset( $alchemists_data['alchemists__nav-font']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-size'] ) ) ? $alchemists_data['alchemists__nav-font']['font-size'] : '12px';
 
     $vars['nav-sub-font-family'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-family'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-family'] : 'Montserrat, sans-serif';
-    $vars['nav-sub-text-transform'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['text-transform'] ) && !empty( isset( $alchemists_data['alchemists__nav-font-sub']['text-transform'] ) ) ) ? $alchemists_data['alchemists__nav-font-sub']['text-transform'] : 'uppercase';
+    $vars['nav-sub-text-transform'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['text-transform'] : 'uppercase';
     $vars['nav-sub-font-weight'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-weight'] : '700';
-    $vars['nav-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) && !empty( isset( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-style'] : 'normal';
-    $vars['nav-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) && !empty( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-size'] : '12px';
+    $vars['nav-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-style'] : 'normal';
+    $vars['nav-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-size'] : '12px';
   }
 
 

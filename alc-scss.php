@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 1.1.1
+ * Version: 2.0.0
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
     define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-    define('DFSCSS_VERSION_NUM', '1.0.0');
+    define('DFSCSS_VERSION_NUM', '2.0.0');
 
 
 
@@ -52,13 +52,25 @@ add_action( 'wp_enqueue_scripts', 'df_enqueue_styles', 20 );
 function df_enqueue_styles() {
 
   // Main styles
-	wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
+  if ( alchemists_sp_preset('soccer') ) {
+    wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-soccer.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
+  } else {
+    wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-basketball.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
+  }
 
   // Woocommerce styles
-  wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
+  if ( alchemists_sp_preset('soccer') ) {
+    wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-soccer.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
+  } else {
+    wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-basketball.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
+  }
 
   // Sportspress styles
-  wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
+  if ( alchemists_sp_preset('soccer') ) {
+    wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-soccer.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
+  } else {
+    wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-basketball.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
+  }
 }
 
 

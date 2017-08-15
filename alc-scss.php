@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 1.1.1
+ * Version: 1.2.0
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
     define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-    define('DFSCSS_VERSION_NUM', '1.0.0');
+    define('DFSCSS_VERSION_NUM', '1.2.0');
 
 
 
@@ -171,6 +171,13 @@ function df_scss_vars( $vars, $handle ) {
 
   $vars['header-info-block-link-color-mobile'] = ( isset( $alchemists_data['alchemists__header-info-link-color-mobile']['regular'] ) && !empty( $alchemists_data['alchemists__header-info-link-color-mobile']['regular'] ) )  ? $alchemists_data['alchemists__header-info-link-color-mobile']['regular'] : '#6b6d70';
   $vars['header-info-block-link-color-mobile-hover'] = ( isset( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) && !empty( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) )  ? $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] : '#fff';
+
+  // Blog Categories Group 1
+  $vars['post-category-1'] = ( isset( $alchemists_data['alchemists__blog-cat-group-1'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-1'] ) )  ? $alchemists_data['alchemists__blog-cat-group-1'] : $vars['color-primary-darken'];
+  // Blog Categories Group 2
+  $vars['post-category-2'] = ( isset( $alchemists_data['alchemists__blog-cat-group-2'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-2'] ) )  ? $alchemists_data['alchemists__blog-cat-group-2'] : $vars['color-4'];
+  // Blog Categories Group 3
+  $vars['post-category-3'] = ( isset( $alchemists_data['alchemists__blog-cat-group-3'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-3'] ) )  ? $alchemists_data['alchemists__blog-cat-group-3'] : $vars['color-3'];
 
   // Footer Background
   $vars['footer-widgets-bg'] = ( isset( $alchemists_data['alchemists__footer-widgets-bg']['background-color'] ) && !empty( $alchemists_data['alchemists__footer-widgets-bg']['background-color'] )) ? $alchemists_data['alchemists__footer-widgets-bg']['background-color'] : $vars['color-dark'];

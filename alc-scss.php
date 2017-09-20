@@ -123,7 +123,10 @@ function df_scss_vars( $vars, $handle ) {
   $vars['color-2'] = ( isset( $alchemists_data['color-2'] ) && !empty( $alchemists_data['color-2'] ) ) ? $alchemists_data['color-2'] : $colors['color_2'];
   $vars['color-3'] = ( isset( $alchemists_data['color-3'] ) && !empty( $alchemists_data['color-3'] ) ) ? $alchemists_data['color-3'] : $colors['color_3'];
   $vars['color-4'] = ( isset( $alchemists_data['color-4'] ) && !empty( $alchemists_data['color-4'] ) ) ? $alchemists_data['color-4'] : $colors['color_4'];
-  $vars['color-4-darken'] = ( isset( $alchemists_data['color-4-darken'] ) && !empty( $alchemists_data['color-4-darken'] ) ) ? $alchemists_data['color-4-darken'] : $colors['color_4_darken'];
+
+  if ( alchemists_sp_preset('soccer') ) {
+    $vars['color-4-darken'] = ( isset( $alchemists_data['color-4-darken'] ) && !empty( $alchemists_data['color-4-darken'] ) ) ? $alchemists_data['color-4-darken'] : $colors['color_4_darken'];
+  }
 
   // Header Primary Height
   $vars['nav-height'] = ( isset( $alchemists_data['alchemists__header-primary-height'] ) && !empty( $alchemists_data['alchemists__header-primary-height'] )) ? $alchemists_data['alchemists__header-primary-height'] . 'px' : '62px';

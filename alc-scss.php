@@ -48,12 +48,6 @@ include_once DFSCSS_PLUGIN_DIR . '/compiler/WP_SCSS_Compiler.php'; // SCSS Compi
  * 3. ENQUEUE STYLES
  */
 
-if (!function_exists('alchemists_sp_preset')) {
-	function alchemists_sp_preset() {
-		return false;
-	}
-}
-
 add_action( 'wp_enqueue_scripts', 'df_enqueue_styles', 20 );
 function df_enqueue_styles() {
 

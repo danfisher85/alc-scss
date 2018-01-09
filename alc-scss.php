@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 2.0.2
+ * Version: 3.0.0
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -51,26 +51,22 @@ include_once DFSCSS_PLUGIN_DIR . '/compiler/WP_SCSS_Compiler.php'; // SCSS Compi
 add_action( 'wp_enqueue_scripts', 'df_enqueue_styles', 20 );
 function df_enqueue_styles() {
 
-	// Main styles
+	$sport = 'basketball';
+
 	if ( alchemists_sp_preset('soccer') ) {
-		wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-soccer.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
-	} else {
-		wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-basketball.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
+		$sport = 'soccer';
+	} elseif ( alchemists_sp_preset('football') ) {
+		$sport = 'football';
 	}
+
+	// Main styles
+	wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-' . $sport . '.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
 
 	// Woocommerce styles
-	if ( alchemists_sp_preset('soccer') ) {
-		wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-soccer.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
-	} else {
-		wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-basketball.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
-	}
+	wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-' . $sport . '.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
 
 	// Sportspress styles
-	if ( alchemists_sp_preset('soccer') ) {
-		wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-soccer.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
-	} else {
-		wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-basketball.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
-	}
+	wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-' . $sport .'.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
 }
 
 
@@ -88,7 +84,7 @@ function df_scss_vars( $vars, $handle ) {
 	}
 
 	if ( alchemists_sp_preset('soccer') ) {
-		// Soccer Colors
+		// Soccer
 		$colors = array(
 			'color_primary'        => '#38a9ff',
 			'color_primary_darken' => '#1892ed',
@@ -99,9 +95,22 @@ function df_scss_vars( $vars, $handle ) {
 			'color_3'              => '#07e0c4',
 			'color_4'              => '#c2ff1f',
 			'color_4_darken'       => '#9fe900',
+		);
+	} elseif ( alchemists_sp_preset('football') ) {
+		// American Football
+		$colors = array(
+			'color_primary'        => '#f92552',
+			'color_primary_darken' => '#f92552',
+			'color_dark'           => '#323150',
+			'color_dark_lighten'   => '#383759',
+			'color_gray'           => '#9e9caa',
+			'color_2'              => '#3c3b5b',
+			'color_3'              => '#9e69ee',
+			'color_4'              => '#3ffeca',
+			'color_4_darken'       => '#0fe3ab',
 		); 
 	} else {
-		// Basketball Colors
+		// Basketball
 		$colors = array(
 			'color_primary'        => '#ffdc11',
 			'color_primary_darken' => '#ffcc00',

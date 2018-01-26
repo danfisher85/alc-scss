@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -143,6 +143,7 @@ function df_scss_vars( $vars, $handle ) {
 
 	// Top Bar
 	$vars['header-top-bg'] = ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) ? $alchemists_data['alchemists__header-top-bar-bg'] : $vars['color-dark-lighten'];
+	$vars['top-bar-link-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-link-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-link-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-link-color'] : '#fff';
 	$vars['top-bar-highlight'] = ( isset( $alchemists_data['alchemists__header-top-bar-highlight'] ) && !empty( $alchemists_data['alchemists__header-top-bar-highlight'] ) ) ? $alchemists_data['alchemists__header-top-bar-highlight'] : $vars['color-primary'];
 	$vars['top-bar-text-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-text-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-text-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-text-color'] : '#6b6d70';
 	$vars['top-bar-divider-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-divider-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-divider-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-divider-color'] : $vars['top-bar-text-color'];

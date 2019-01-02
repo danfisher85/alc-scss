@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 3.0.4
+ * Version: 3.0.5
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -292,6 +292,10 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['headings-font-family'] = ( isset( $alchemists_data['headings-typography']['font-family'] ) && !empty( $alchemists_data['headings-typography']['font-family'] ) ) ? $alchemists_data['headings-typography']['font-family'] : 'Exo 2, sans-serif';
 
 			$vars['headings-color'] = ( isset( $alchemists_data['headings-typography']['color'] ) && !empty( $alchemists_data['headings-typography']['color'] ) ) ? $alchemists_data['headings-typography']['color'] : '#fff';
+
+			$vars['post-title-color'] = ( isset( $alchemists_data['alchemists__custom_heading_link_color']['regular'] ) && !empty( $alchemists_data['alchemists__custom_heading_link_color']['regular'] ) ) ? $alchemists_data['alchemists__custom_heading_link_color']['regular'] : '#fff';
+
+			$vars['post-title-color-hover'] = ( isset( $alchemists_data['alchemists__custom_heading_link_color']['hover'] ) && !empty( $alchemists_data['alchemists__custom_heading_link_color']['hover'] ) ) ? $alchemists_data['alchemists__custom_heading_link_color']['hover'] : $vars['color-4'];
 		}
 
 		// Navigation
@@ -592,6 +596,10 @@ function df_scss_vars( $vars, $handle ) {
 			// Headings
 			$vars['headings-font-family'] = ( isset( $alchemists_data['headings-typography']['font-family'] ) && !empty( $alchemists_data['headings-typography']['font-family'] ) ) ? $alchemists_data['headings-typography']['font-family'] : 'Montserrat';
 			$vars['headings-color'] = ( isset( $alchemists_data['headings-typography']['color'] ) && !empty( $alchemists_data['headings-typography']['color'] ) ) ? $alchemists_data['headings-typography']['color'] : '#31404b';
+
+			$vars['post-title-color'] = ( isset( $alchemists_data['alchemists__custom_heading_link_color']['regular'] ) && !empty( $alchemists_data['alchemists__custom_heading_link_color']['regular'] ) ) ? $alchemists_data['alchemists__custom_heading_link_color']['regular'] : $vars['color-2'];
+
+			$vars['post-title-color-hover'] = ( isset( $alchemists_data['alchemists__custom_heading_link_color']['hover'] ) && !empty( $alchemists_data['alchemists__custom_heading_link_color']['hover'] ) ) ? $alchemists_data['alchemists__custom_heading_link_color']['hover'] : '#4f6779';
 		}
 
 		// Navigation

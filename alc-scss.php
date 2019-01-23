@@ -664,7 +664,7 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['nav-sub-text-transform'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['text-transform'] : 'uppercase';
 			$vars['nav-sub-font-weight'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-weight'] : '700';
 			$vars['nav-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-style'] : 'normal';
-			$vars['nav-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-size'] : '12px';
+			$vars['nav-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-size'] : '11px';
 		}
 
 		// Preloader

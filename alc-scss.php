@@ -240,6 +240,9 @@ function df_scss_vars( $vars, $handle ) {
 		// Mobile Nav Background Color
 		$vars['nav-mobile-bg'] = ( isset( $alchemists_data['alchemists__header-primary-mobile-nav-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-mobile-nav-bg'] ) )  ? $alchemists_data['alchemists__header-primary-mobile-nav-bg'] : $vars['color-dark'];
 
+		// Mobile Nav Burger Menu Color
+		$vars['nav-mobile-burger-icon'] = ( isset( $alchemists_data['alchemists__header-primary-mobile-burger-icon-color'] ) && !empty( $alchemists_data['alchemists__header-primary-mobile-burger-icon-color'] ) )  ? $alchemists_data['alchemists__header-primary-mobile-burger-icon-color'] : '#fff';
+
 		// Header Mobile Background Color
 		$vars['header-mobile-bg'] = ( isset( $alchemists_data['alchemists__mobile-header-bg'] ) && !empty( $alchemists_data['alchemists__mobile-header-bg'] ) )  ? $alchemists_data['alchemists__mobile-header-bg'] : $vars['color-dark-2'];
 
@@ -562,6 +565,9 @@ function df_scss_vars( $vars, $handle ) {
 
 		// Mobile Nav Background Color
 		$vars['nav-mobile-bg'] = ( isset( $alchemists_data['alchemists__header-primary-mobile-nav-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-mobile-nav-bg'] ) )  ? $alchemists_data['alchemists__header-primary-mobile-nav-bg'] : $vars['color-dark'];
+
+		// Mobile Nav Burger Menu Color
+		$vars['nav-mobile-burger-icon'] = ( isset( $alchemists_data['alchemists__header-primary-mobile-burger-icon-color'] ) && !empty( $alchemists_data['alchemists__header-primary-mobile-burger-icon-color'] ) )  ? $alchemists_data['alchemists__header-primary-mobile-burger-icon-color'] : '#fff';
 
 		// Header Mobile Background Color
 		$vars['header-mobile-bg'] = ( isset( $alchemists_data['alchemists__mobile-header-bg'] ) && !empty( $alchemists_data['alchemists__mobile-header-bg'] ) ) ? $alchemists_data['alchemists__mobile-header-bg'] : $vars['color-dark'];

@@ -219,6 +219,9 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : '#fff';
 		$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-4'];
 
+		// Header Submenu Caret Color
+		$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : '#fff';
+
 		// Megamenu Text Color
 		$vars['nav-sub-megamenu-txt-color'] = ( isset( $alchemists_data['alchemists__header-primary-megamenu-txt-color'] ) && !empty( $alchemists_data['alchemists__header-primary-megamenu-txt-color'] ) ) ? $alchemists_data['alchemists__header-primary-megamenu-txt-color'] : $vars['color-gray'];
 
@@ -513,6 +516,9 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : '#fff';
 			$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-4'];
 
+			// Header Submenu Caret Color
+			$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : '#fff';
+
 			// Megamenu Text Color
 			$vars['nav-sub-megamenu-txt-color'] = ( isset( $alchemists_data['alchemists__header-primary-megamenu-txt-color'] ) && !empty( $alchemists_data['alchemists__header-primary-megamenu-txt-color'] ) ) ? $alchemists_data['alchemists__header-primary-megamenu-txt-color'] : $vars['color-gray'];
 
@@ -544,6 +550,9 @@ function df_scss_vars( $vars, $handle ) {
 			// Header Submenu Link Color
 			$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : $vars['color-2'];
 			$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-2'];
+
+			// Header Submenu Caret Color
+			$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : $vars['color-2'];
 
 			// Megamenu Text Color
 			$vars['nav-sub-megamenu-txt-color'] = ( isset( $alchemists_data['alchemists__header-primary-megamenu-txt-color'] ) && !empty( $alchemists_data['alchemists__header-primary-megamenu-txt-color'] ) ) ? $alchemists_data['alchemists__header-primary-megamenu-txt-color'] : $vars['color-gray'];

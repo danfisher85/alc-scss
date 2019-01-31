@@ -73,8 +73,10 @@ function df_enqueue_styles() {
 		wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-' . $sport . '.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
 	}
 
-	// Sportspress styles
-	wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-' . $sport . $alchemists_dir .'.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
+	if ( class_exists( 'SportsPress' ) ) {
+		// Sportspress styles
+		wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-' . $sport . $alchemists_dir .'.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );
+	}
 }
 
 

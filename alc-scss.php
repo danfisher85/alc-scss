@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
 		define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-		define('DFSCSS_VERSION_NUM', '2.0.2');
+		define('DFSCSS_VERSION_NUM', '3.0.5');
 
 
 
@@ -68,8 +68,10 @@ function df_enqueue_styles() {
 	// Main styles
 	wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-' . $sport . $alchemists_dir . '.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
 
-	// Woocommerce styles
-	wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-' . $sport . '.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
+	if ( alchemists_wc_exists() ) {
+		// Woocommerce styles
+		wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-' . $sport . '.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
+	}
 
 	// Sportspress styles
 	wp_enqueue_style( 'df-compiled-sportspress', get_template_directory_uri() . '/sass/sportspress-skin-' . $sport . $alchemists_dir .'.scss', array( 'alchemists-sportspress' ), DFSCSS_VERSION_NUM );

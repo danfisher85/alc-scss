@@ -68,7 +68,7 @@ function df_enqueue_styles() {
 	// Main styles
 	wp_enqueue_style( 'df-compiled', get_template_directory_uri() . '/sass/style-skin-' . $sport . $alchemists_dir . '.scss', array( 'alchemists-style' ), DFSCSS_VERSION_NUM );
 
-	if ( alchemists_wc_exists() ) {
+	if ( class_exists( 'woocommerce' ) ) {
 		// Woocommerce styles
 		wp_enqueue_style( 'df-compiled-woocommerce', get_template_directory_uri() . '/sass/woocommerce/woocommerce-skin-' . $sport . '.scss', array( 'woocommerce' ), DFSCSS_VERSION_NUM );
 	}

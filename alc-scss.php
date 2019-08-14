@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 3.0.6
+ * Version: 3.0.7
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -299,6 +299,20 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['post-category-4'] = ( isset( $alchemists_data['alchemists__blog-cat-group-4'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-4'] ) )  ? $alchemists_data['alchemists__blog-cat-group-4'] : $vars['color-primary'];
 		// Blog Categories Group 5
 		$vars['post-category-5'] = ( isset( $alchemists_data['alchemists__blog-cat-group-5'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-5'] ) )  ? $alchemists_data['alchemists__blog-cat-group-5'] : $vars['color-primary'];
+		// Blog Categories Group 6
+		$vars['post-category-6'] = ( isset( $alchemists_data['alchemists__blog-cat-group-6'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-6'] ) )  ? $alchemists_data['alchemists__blog-cat-group-6'] : $vars['color-primary'];
+		// Blog Categories Group 7
+		$vars['post-category-7'] = ( isset( $alchemists_data['alchemists__blog-cat-group-7'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-7'] ) )  ? $alchemists_data['alchemists__blog-cat-group-7'] : $vars['color-primary'];
+		// Blog Categories Group 8
+		$vars['post-category-8'] = ( isset( $alchemists_data['alchemists__blog-cat-group-8'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-8'] ) )  ? $alchemists_data['alchemists__blog-cat-group-8'] : $vars['color-primary'];
+		// Blog Categories Group 9
+		$vars['post-category-9'] = ( isset( $alchemists_data['alchemists__blog-cat-group-9'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-9'] ) )  ? $alchemists_data['alchemists__blog-cat-group-9'] : $vars['color-primary'];
+		// Blog Categories Group 10
+		$vars['post-category-10'] = ( isset( $alchemists_data['alchemists__blog-cat-group-10'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-10'] ) )  ? $alchemists_data['alchemists__blog-cat-group-10'] : $vars['color-primary'];
+		// Blog Categories Group 11
+		$vars['post-category-11'] = ( isset( $alchemists_data['alchemists__blog-cat-group-11'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-11'] ) )  ? $alchemists_data['alchemists__blog-cat-group-11'] : $vars['color-primary'];
+		// Blog Categories Group 12
+		$vars['post-category-12'] = ( isset( $alchemists_data['alchemists__blog-cat-group-12'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-12'] ) )  ? $alchemists_data['alchemists__blog-cat-group-12'] : $vars['color-primary'];
 
 
 		// Footer Background
@@ -640,6 +654,20 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['post-category-4'] = ( isset( $alchemists_data['alchemists__blog-cat-group-4'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-4'] ) ) ? $alchemists_data['alchemists__blog-cat-group-4'] : $vars['color-primary-darken'];
 		// Blog Categories Group 5
 		$vars['post-category-5'] = ( isset( $alchemists_data['alchemists__blog-cat-group-5'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-5'] ) ) ? $alchemists_data['alchemists__blog-cat-group-5'] : $vars['color-primary-darken'];
+		// Blog Categories Group 6
+		$vars['post-category-6'] = ( isset( $alchemists_data['alchemists__blog-cat-group-6'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-6'] ) )  ? $alchemists_data['alchemists__blog-cat-group-6'] : $vars['color-primary-darken'];
+		// Blog Categories Group 7
+		$vars['post-category-7'] = ( isset( $alchemists_data['alchemists__blog-cat-group-7'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-7'] ) )  ? $alchemists_data['alchemists__blog-cat-group-7'] : $vars['color-primary-darken'];
+		// Blog Categories Group 8
+		$vars['post-category-8'] = ( isset( $alchemists_data['alchemists__blog-cat-group-8'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-8'] ) )  ? $alchemists_data['alchemists__blog-cat-group-8'] : $vars['color-primary-darken'];
+		// Blog Categories Group 9
+		$vars['post-category-9'] = ( isset( $alchemists_data['alchemists__blog-cat-group-9'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-9'] ) )  ? $alchemists_data['alchemists__blog-cat-group-9'] : $vars['color-primary-darken'];
+		// Blog Categories Group 10
+		$vars['post-category-10'] = ( isset( $alchemists_data['alchemists__blog-cat-group-10'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-10'] ) )  ? $alchemists_data['alchemists__blog-cat-group-10'] : $vars['color-primary-darken'];
+		// Blog Categories Group 11
+		$vars['post-category-11'] = ( isset( $alchemists_data['alchemists__blog-cat-group-11'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-11'] ) )  ? $alchemists_data['alchemists__blog-cat-group-11'] : $vars['color-primary-darken'];
+		// Blog Categories Group 12
+		$vars['post-category-12'] = ( isset( $alchemists_data['alchemists__blog-cat-group-12'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-12'] ) )  ? $alchemists_data['alchemists__blog-cat-group-12'] : $vars['color-primary-darken'];
 
 		// Footer Background
 		$vars['footer-widgets-bg'] = ( isset( $alchemists_data['alchemists__footer-widgets-bg']['background-color'] ) && !empty( $alchemists_data['alchemists__footer-widgets-bg']['background-color'] )) ? $alchemists_data['alchemists__footer-widgets-bg']['background-color'] : $vars['color-dark'];

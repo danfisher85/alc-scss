@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 3.0.7
+ * Version: 3.0.8
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -404,7 +404,7 @@ function df_scss_vars( $vars, $handle ) {
 
 		$card_colors = array(
 			'card-bg'              => '#fff',
-			'card-header-bg'       => 'transparent',
+			'card-header-bg'       => '#fff',
 			'card-subheader-bg'    => '#f5f7f9',
 			'card-border-color'    => '#e4e7ed'
 		);

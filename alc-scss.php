@@ -373,6 +373,10 @@ function df_scss_vars( $vars, $handle ) {
 
 		$vars['footer-copyright-border-color'] = ( isset( $alchemists_data['alchemists__footer-secondary-border-color'] ) && !empty( $alchemists_data['alchemists__footer-secondary-border-color'] ) ) ? $alchemists_data['alchemists__footer-secondary-border-color'] : $vars['color-2'];
 
+		$vars['footer-widget-link-color'] = ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] ) ) ? $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] : '#fff';
+
+		$vars['footer-widget-link-color-hover'] = ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) ) ? $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] : $vars['color-primary'];
+
 
 		// Typography
 
@@ -722,6 +726,10 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['footer-secondary-side-bg'] = ( isset( $alchemists_data['alchemists__footer-side-decoration-bg'] ) && !empty( $alchemists_data['alchemists__footer-side-decoration-bg'] ) ) ? $alchemists_data['alchemists__footer-side-decoration-bg'] : $vars['color-primary']; // done
 	
 			$vars['footer-copyright-border-color'] = ( isset( $alchemists_data['alchemists__footer-secondary-border-color'] ) && !empty( $alchemists_data['alchemists__footer-secondary-border-color'] ) ) ? $alchemists_data['alchemists__footer-secondary-border-color'] : 'transparent'; // done
+
+			$vars['footer-widget-link-color'] = ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] ) ) ? $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] : $colors['color_gray']; // done
+
+			$vars['footer-widget-link-color-hover'] = ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) ) ? $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] : '#fff'; // done
 	
 	
 			// Typography
@@ -1147,6 +1155,10 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['footer-secondary-side-bg'] = ( isset( $alchemists_data['alchemists__footer-side-decoration-bg'] ) && !empty( $alchemists_data['alchemists__footer-side-decoration-bg'] ) ) ? $alchemists_data['alchemists__footer-side-decoration-bg'] : $vars['color-primary'];
 
 		$vars['footer-copyright-border-color'] = ( isset( $alchemists_data['alchemists__footer-secondary-border-color'] ) && !empty( $alchemists_data['alchemists__footer-secondary-border-color'] ) ) ? $alchemists_data['alchemists__footer-secondary-border-color'] : 'transparent';
+
+		$vars['footer-widget-link-color'] = ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] ) ) ? $alchemists_data['alchemists__footer-widgets-list-link-color']['regular'] : '#6b6d70';
+
+		$vars['footer-widget-link-color-hover'] = ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) ) ? $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] : $vars['color-primary'];
 
 
 		// Typography

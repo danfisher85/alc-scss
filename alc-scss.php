@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.0.0
+ * Version: 4.0.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -199,6 +199,7 @@ function df_scss_vars( $vars, $handle ) {
 
 		// Header Primary Background
 		$vars['header-primary-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) )  ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark'];
+		$vars['header-primary-alt-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) )  ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark'];
 
 		// Header Primary Links Color
 		$vars['nav-font-color'] = ( isset( $alchemists_data['alchemists__header-primary-font-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-font-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-font-color']['regular'] : '#fff';
@@ -552,7 +553,8 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['header-secondary-bg'] = ( isset( $alchemists_data['alchemists__header-secondary-bg'] ) && !empty( $alchemists_data['alchemists__header-secondary-bg'] ) ) ? $alchemists_data['alchemists__header-secondary-bg'] : $vars['color-dark-2']; // done
 	
 			// Header Primary Background
-			$vars['header-primary-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) )  ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark-2']; // done
+			$vars['header-primary-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) ) ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark-2']; // done
+			$vars['header-primary-alt-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) ) ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark']; // done
 	
 			// Header Primary Links Color
 			$vars['nav-font-color'] = ( isset( $alchemists_data['alchemists__header-primary-font-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-font-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-font-color']['regular'] : '#fff'; // done
@@ -920,6 +922,7 @@ function df_scss_vars( $vars, $handle ) {
 
 		// Header Primary Background
 		$vars['header-primary-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) )  ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark-lighten'];
+		$vars['header-primary-alt-bg'] = ( isset( $alchemists_data['alchemists__header-primary-bg'] ) && !empty( $alchemists_data['alchemists__header-primary-bg'] ) )  ? $alchemists_data['alchemists__header-primary-bg'] : $vars['color-dark-lighten'];
 
 		// Header Primary Links Color
 		$vars['nav-font-color'] = ( isset( $alchemists_data['alchemists__header-primary-font-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-font-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-font-color']['regular'] : '#fff';

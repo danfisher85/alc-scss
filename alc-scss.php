@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.0.1
+ * Version: 4.0.2
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -109,6 +109,10 @@ function df_scss_vars( $vars, $handle ) {
 			'card-border-color'    => '#3c3b5b'
 		);
 
+		$table_colors = array(
+			'table-border-color'   => '#3c3b5b',
+		);
+
 		$colors = array(
 			'color_primary'        => '#f92552',
 			'color_primary_darken' => '#f92552',
@@ -150,6 +154,8 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['card-subheader-bg'] = ( isset( $alchemists_data['alchemists__card-subheader-bg'] ) && !empty( $alchemists_data['alchemists__card-subheader-bg'] ) ) ? $alchemists_data['alchemists__card-subheader-bg'] : $card_colors['card-subheader-bg'];
 		$vars['card-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color'];
 
+		// Table
+		$vars['table-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color'];
 
 		// Header Primary Height
 		$vars['nav-height'] = ( isset( $alchemists_data['alchemists__header-primary-height'] ) && !empty( $alchemists_data['alchemists__header-primary-height'] )) ? $alchemists_data['alchemists__header-primary-height'] . 'px' : '62px';
@@ -463,6 +469,10 @@ function df_scss_vars( $vars, $handle ) {
 				'card-subheader-bg'    => '#403351',
 				'card-border-color'    => '#4b3b60'
 			);
+
+			$table_colors = array(
+				'table-border-color'   => '#4b3b60',
+			);
 	
 			$colors = array(
 				'color_primary'        => '#00ff5b',
@@ -504,6 +514,10 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['card-header-bg'] = ( isset( $alchemists_data['alchemists__card-header-bg'] ) && !empty( $alchemists_data['alchemists__card-header-bg'] ) ) ? $alchemists_data['alchemists__card-header-bg'] : $card_colors['card-header-bg']; // done
 			$vars['card-subheader-bg'] = ( isset( $alchemists_data['alchemists__card-subheader-bg'] ) && !empty( $alchemists_data['alchemists__card-subheader-bg'] ) ) ? $alchemists_data['alchemists__card-subheader-bg'] : $card_colors['card-subheader-bg']; // done
 			$vars['card-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
+			
+
+			// Table
+			$vars['table-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
 	
 	
 			// Header Primary Height
@@ -820,6 +834,10 @@ function df_scss_vars( $vars, $handle ) {
 			'card-border-color'    => '#e4e7ed'
 		);
 
+		$table_colors = array(
+			'table-border-color'   => '#e4e7ed',
+		);
+
 		if ( alchemists_sp_preset('soccer') ) {
 			// Soccer
 			$colors = array(
@@ -862,6 +880,9 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['card-header-bg'] = ( isset( $alchemists_data['alchemists__card-header-bg'] ) && !empty( $alchemists_data['alchemists__card-header-bg'] ) ) ? $alchemists_data['alchemists__card-header-bg'] : $card_colors['card-header-bg'];
 		$vars['card-subheader-bg'] = ( isset( $alchemists_data['alchemists__card-subheader-bg'] ) && !empty( $alchemists_data['alchemists__card-subheader-bg'] ) ) ? $alchemists_data['alchemists__card-subheader-bg'] : $card_colors['card-subheader-bg'];
 		$vars['card-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color'];
+
+		// Table
+		$vars['table-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color'];
 
 		if ( alchemists_sp_preset('soccer') ) {
 			$vars['color-4-darken'] = ( isset( $alchemists_data['color-4-darken'] ) && !empty( $alchemists_data['color-4-darken'] ) ) ? $alchemists_data['color-4-darken'] : $colors['color_4_darken'];

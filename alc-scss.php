@@ -510,14 +510,18 @@ function df_scss_vars( $vars, $handle ) {
 	
 	
 			// Card
-			$vars['card-bg'] = ( isset( $alchemists_data['alchemists__card-bg'] ) && !empty( $alchemists_data['alchemists__card-bg'] ) ) ? $alchemists_data['alchemists__card-bg'] : $card_colors['card-bg']; // done
-			$vars['card-header-bg'] = ( isset( $alchemists_data['alchemists__card-header-bg'] ) && !empty( $alchemists_data['alchemists__card-header-bg'] ) ) ? $alchemists_data['alchemists__card-header-bg'] : $card_colors['card-header-bg']; // done
-			$vars['card-subheader-bg'] = ( isset( $alchemists_data['alchemists__card-subheader-bg'] ) && !empty( $alchemists_data['alchemists__card-subheader-bg'] ) ) ? $alchemists_data['alchemists__card-subheader-bg'] : $card_colors['card-subheader-bg']; // done
-			$vars['card-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
+			$vars['card-bg'] = isset( $alchemists_data['alchemists__card-bg'] ) && !empty( $alchemists_data['alchemists__card-bg'] ) ? $alchemists_data['alchemists__card-bg'] : $card_colors['card-bg']; // done
+			$vars['card-header-bg'] = isset( $alchemists_data['alchemists__card-header-bg'] ) && !empty( $alchemists_data['alchemists__card-header-bg'] ) ? $alchemists_data['alchemists__card-header-bg'] : $card_colors['card-header-bg']; // done
+			$vars['card-subheader-bg'] = isset( $alchemists_data['alchemists__card-subheader-bg'] ) && !empty( $alchemists_data['alchemists__card-subheader-bg'] ) ? $alchemists_data['alchemists__card-subheader-bg'] : $card_colors['card-subheader-bg']; // done
+			$vars['card-border-color'] = isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
 			
 
 			// Table
-			$vars['table-border-color'] = ( isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
+			$vars['table-border-color'] = isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
+
+
+			// Form
+			$vars['input-border'] = isset( $alchemists_data['alchemists__card-border-color'] ) && !empty( $alchemists_data['alchemists__card-border-color'] ) ? $alchemists_data['alchemists__card-border-color'] : $card_colors['card-border-color']; // done
 	
 	
 			// Header Primary Height

@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.0.2
+ * Version: 4.1.0
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -187,6 +187,15 @@ function df_scss_vars( $vars, $handle ) {
 		// Outline Button Border Color
 		$vars['btn-o-default-border'] = ( isset( $alchemists_data['alchemists__button_outline_border_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_outline_border_color']['regular'] )) ? $alchemists_data['alchemists__button_outline_border_color']['regular'] : '#7f7e8c';
 		$vars['btn-o-default-border-hover'] = ( isset( $alchemists_data['alchemists__button_outline_border_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_outline_border_color']['hover'] )) ? $alchemists_data['alchemists__button_outline_border_color']['hover'] : $vars['color-4'];
+
+
+		// Default Button Color
+		$vars['btn-default-color'] = ( isset( $alchemists_data['alchemists__button_default_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_default_txt_color']['regular'] )) ? $alchemists_data['alchemists__button_default_txt_color']['regular'] : '#fff';
+
+		// Default Button Background Color
+		$vars['btn-default-bg'] = ( isset( $alchemists_data['alchemists__button_default_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_default_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_default_bg_color']['regular'] : '#938fa4';
+		$vars['btn-default-hover'] = ( isset( $alchemists_data['alchemists__button_default_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_default_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_default_bg_color']['hover'] : $vars['color-primary'];
+
 
 		// Top Bar
 		$vars['header-top-bg'] = ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) ? $alchemists_data['alchemists__header-top-bar-bg'] : $vars['color-dark'];
@@ -554,6 +563,15 @@ function df_scss_vars( $vars, $handle ) {
 			// Outline Button Border Color
 			$vars['btn-o-default-border'] = ( isset( $alchemists_data['alchemists__button_outline_border_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_outline_border_color']['regular'] )) ? $alchemists_data['alchemists__button_outline_border_color']['regular'] : '#7a7283'; // done
 			$vars['btn-o-default-border-hover'] = ( isset( $alchemists_data['alchemists__button_outline_border_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_outline_border_color']['hover'] )) ? $alchemists_data['alchemists__button_outline_border_color']['hover'] : $vars['color-4']; // done
+
+
+			// Default Button Color
+			$vars['btn-default-color'] = ( isset( $alchemists_data['alchemists__button_default_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_default_txt_color']['regular'] )) ? $alchemists_data['alchemists__button_default_txt_color']['regular'] : '#fff';
+
+			// Default Button Background Color
+			$vars['btn-default-bg'] = ( isset( $alchemists_data['alchemists__button_default_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_default_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_default_bg_color']['regular'] : '#8c8297';
+			$vars['btn-default-hover'] = ( isset( $alchemists_data['alchemists__button_default_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_default_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_default_bg_color']['hover'] : $vars['color-primary-darken'];
+
 	
 			// Top Bar
 			$vars['header-top-bg'] = ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) ? $alchemists_data['alchemists__header-top-bar-bg'] : $vars['color-dark']; // done
@@ -922,6 +940,15 @@ function df_scss_vars( $vars, $handle ) {
 		// Outline Button Border Color
 		$vars['btn-o-default-border'] = ( isset( $alchemists_data['alchemists__button_outline_border_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_outline_border_color']['regular'] )) ? $alchemists_data['alchemists__button_outline_border_color']['regular'] : '#dbdfe6';
 		$vars['btn-o-default-border-hover'] = ( isset( $alchemists_data['alchemists__button_outline_border_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_outline_border_color']['hover'] )) ? $alchemists_data['alchemists__button_outline_border_color']['hover'] : $vars['color-gray'];
+
+
+		// Default Button Color
+		$vars['btn-default-color'] = ( isset( $alchemists_data['alchemists__button_default_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_default_txt_color']['regular'] )) ? $alchemists_data['alchemists__button_default_txt_color']['regular'] : '#fff';
+
+		// Default Button Background Color
+		$vars['btn-default-bg'] = ( isset( $alchemists_data['alchemists__button_default_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_default_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_default_bg_color']['regular'] : $vars['color-gray'];
+		$vars['btn-default-hover'] = ( isset( $alchemists_data['alchemists__button_default_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_default_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_default_bg_color']['hover'] : '#868a91';
+
 
 		// Top Bar
 		$vars['header-top-bg'] = ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) ? $alchemists_data['alchemists__header-top-bar-bg'] : $vars['color-dark-lighten'];

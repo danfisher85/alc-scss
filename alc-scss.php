@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.1.0
+ * Version: 4.1.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -562,7 +562,7 @@ function df_scss_vars( $vars, $handle ) {
 
 			$vars['table-bg'] = isset( $alchemists_data['alchemists__table-bg'] ) && !empty( $alchemists_data['alchemists__table-bg'] ) ? $alchemists_data['alchemists__table-bg'] : $table_colors['table-bg'];
 			$vars['table-bg-hover'] = isset( $alchemists_data['alchemists__table-bg-hover'] ) && !empty( $alchemists_data['alchemists__table-bg-hover'] ) ? $alchemists_data['alchemists__table-bg-hover'] : $table_colors['table-bg-hover'];
-			$vars['table-bg-active'] = isset( $alchemists_data['alchemists__table-bg-active'] ) && !empty( $alchemists_data['alchemists__table-bg-active'] ) ? $alchemists_data['alchemists__table-bg-a	ctive'] : $table_colors['table-bg-active'];
+			$vars['table-bg-active'] = isset( $alchemists_data['alchemists__table-bg-active'] ) && !empty( $alchemists_data['alchemists__table-bg-active'] ) ? $alchemists_data['alchemists__table-bg-active'] : $table_colors['table-bg-active'];
 			$vars['table-border-color'] = isset( $alchemists_data['alchemists__table-border-color'] ) && !empty( $alchemists_data['alchemists__table-border-color'] ) ? $alchemists_data['alchemists__table-border-color'] : $table_colors['table-border-color'];
 			$vars['table-thead-bg-color'] = isset( $alchemists_data['alchemists__table-thead-bg-color'] ) && !empty( $alchemists_data['alchemists__table-thead-bg-color'] ) ? $alchemists_data['alchemists__table-thead-bg-color'] : $table_colors['table-thead-bg-color'];
 			$vars['table-thead-color'] = isset( $alchemists_data['alchemists__table-thead-color'] ) && !empty( $alchemists_data['alchemists__table-thead-color'] ) ? $alchemists_data['alchemists__table-thead-color'] : $table_colors['table-thead-color'];

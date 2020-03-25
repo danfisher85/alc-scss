@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.1.1
+ * Version: 4.2.0
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -366,6 +366,12 @@ function df_scss_vars( $vars, $handle ) {
 
 		// submit trigger icon - color
 		$vars['header-search-icon-trigger-mobile'] = ( isset( $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] ) && !empty( $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] ) ) ? $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] : '#fff';
+
+		// Content Filter Colors
+		$vars['content-filter-color'] = ( isset( $alchemists_data['alchemists__content-content-filter']['regular'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['regular'] )) ? $alchemists_data['alchemists__content-content-filter']['regular'] : '#7f7e8c'; // done
+		$vars['content-filter-color-hover'] = ( isset( $alchemists_data['alchemists__content-content-filter']['hover'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['hover'] )) ? $alchemists_data['alchemists__content-content-filter']['hover'] : '#fff'; // done
+		$vars['content-filter-color-active'] = ( isset( $alchemists_data['alchemists__content-content-filter']['active'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['active'] )) ? $alchemists_data['alchemists__content-content-filter']['active'] : '#fff'; // done
+		
 
 		// Blog Categories Group 1
 		$vars['post-category-1'] = ( isset( $alchemists_data['alchemists__blog-cat-group-1'] ) && !empty( $alchemists_data['alchemists__blog-cat-group-1'] ) )  ? $alchemists_data['alchemists__blog-cat-group-1'] : $vars['color-primary'];
@@ -767,6 +773,11 @@ function df_scss_vars( $vars, $handle ) {
 
 			// submit trigger icon - color
 			$vars['header-search-icon-trigger-mobile'] = ( isset( $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] ) && !empty( $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] ) ) ? $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] : '#fff';
+
+			// Content Filter Colors
+			$vars['content-filter-color'] = ( isset( $alchemists_data['alchemists__content-content-filter']['regular'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['regular'] )) ? $alchemists_data['alchemists__content-content-filter']['regular'] : '#7a7283'; // done
+			$vars['content-filter-color-hover'] = ( isset( $alchemists_data['alchemists__content-content-filter']['hover'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['hover'] )) ? $alchemists_data['alchemists__content-content-filter']['hover'] : '#fff'; // done
+			$vars['content-filter-color-active'] = ( isset( $alchemists_data['alchemists__content-content-filter']['active'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['active'] )) ? $alchemists_data['alchemists__content-content-filter']['active'] : '#fff'; // done
 	
 	
 			// Blog Categories Group 1
@@ -1236,6 +1247,11 @@ function df_scss_vars( $vars, $handle ) {
 
 		// submit trigger icon - color
 		$vars['header-search-icon-trigger-mobile'] = ( isset( $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] ) && !empty( $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] ) ) ? $alchemists_data['alchemists__header-search-form-mobile-submit-trigger-icon-color'] : '#fff';
+
+		// Content Filter Colors
+		$vars['content-filter-color'] = ( isset( $alchemists_data['alchemists__content-content-filter']['regular'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['regular'] )) ? $alchemists_data['alchemists__content-content-filter']['regular'] : $vars['color-gray']; // done
+		$vars['content-filter-color-hover'] = ( isset( $alchemists_data['alchemists__content-content-filter']['hover'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['hover'] )) ? $alchemists_data['alchemists__content-content-filter']['hover'] : $vars['color-2']; // done
+		$vars['content-filter-color-active'] = ( isset( $alchemists_data['alchemists__content-content-filter']['active'] ) && !empty( $alchemists_data['alchemists__content-content-filter']['active'] )) ? $alchemists_data['alchemists__content-content-filter']['active'] : $vars['color-2']; // done
 
 
 		// Blog Categories Group 1

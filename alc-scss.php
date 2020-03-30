@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
 		define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-		define('DFSCSS_VERSION_NUM', '3.0.5');
+		define('DFSCSS_VERSION_NUM', '4.2.0');
 
 
 

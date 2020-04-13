@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.2.0
+ * Version: 4.2.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -187,6 +187,9 @@ function df_scss_vars( $vars, $handle ) {
 		// Header Primary Height
 		$vars['nav-height'] = ( isset( $alchemists_data['alchemists__header-primary-height'] ) && !empty( $alchemists_data['alchemists__header-primary-height'] )) ? $alchemists_data['alchemists__header-primary-height'] . 'px' : '62px';
 
+		// Header Tertiary Height
+		$vars['nav-secondary-height'] = ( isset( $alchemists_data['alchemists__header-tertiary-height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-height'] )) ? $alchemists_data['alchemists__header-tertiary-height'] . 'px' : '62px';
+
 		// Mobile Nav Width
 		$nav_mobile_fullwidth = isset( $alchemists_data['alchemists__mobile-nav-fullwidth'] ) ? $alchemists_data['alchemists__mobile-nav-fullwidth'] : 0;
 
@@ -354,6 +357,51 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['header-info-block-link-color-mobile-hover'] = ( isset( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) && !empty( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) )  ? $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] : '#fff';
 
 
+		// Header Tertiary Background
+		$vars['header-tertiary-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-bg'] ) )  ? $alchemists_data['alchemists__header-tertiary-bg'] : '#fff';
+
+		// Header Tertiary Heading Color
+		$vars['nav-secondary-heading'] = ( isset( $alchemists_data['alchemists__header-tertiary-heading-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-heading-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-heading-color'] : $vars['color-2'];
+
+		// Header Tertiary Toggle Color
+		$vars['nav-secondary-mobile-toggle'] = ( isset( $alchemists_data['alchemists__header-tertiary-toggle-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-toggle-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-toggle-color'] : '#9a9da2';
+
+		// Header Tertiary Links Color
+		$vars['nav-secondary-font-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] : $vars['color-dark'];
+		$vars['nav-secondary-font-color-hover'] = ( isset( $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] : $vars['color-primary'];
+
+		// Header Tertiary Link Border Height
+		$vars['nav-secondary-active-border-height'] = ( isset( $alchemists_data['alchemists__header-tertiary-border-height']['height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-border-height']['height'] ) )  ? $alchemists_data['alchemists__header-tertiary-border-height']['height'] : '4px';
+
+		// Header Tertiary Link Border Color
+		$vars['nav-secondary-active-border-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-border-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-border-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-border-color'] : $vars['color-primary'];
+
+		// Header Tertiary Link Background Color
+		$vars['nav-secondary-active-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-background-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-background-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-background-color'] : 'transparent';
+
+		// Header Tertiary Submenu Background Color
+		$vars['nav-secondary-sub-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-bg'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-bg'] : '#fff';
+
+		// Header Tertiary Submenu Border Color
+		$vars['nav-secondary-sub-border-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-border-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-border-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-border-color'] : '#e4e7ed'; // done
+
+		// Header Submenu Link Color
+		$vars['nav-secondary-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] : $vars['color-dark'];
+		$vars['nav-secondary-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] : $vars['color-dark'];
+
+		// Mobile Nav Links Color
+		$vars['nav-secondary-mobile-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-link-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-link-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-link-color'] : $vars['color-dark'];
+
+		// Mobile Nav Submenu Background Color
+		$vars['nav-secondary-mobile-sub-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] : '#e4e7ed';
+
+		// Mobile Nav Submenu Background Color
+		$vars['nav-secondary-mobile-border'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-border'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-border'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-border'] : '#e4e7ed';
+
+		// Mobile Nav Submenu Links Color
+		$vars['nav-secondary-mobile-sub-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] : $vars['color-dark'];
+
+
 		// Search Form
 
 		// background color - desktop
@@ -508,6 +556,31 @@ function df_scss_vars( $vars, $handle ) {
 		}
 
 
+		// Secondary Navigation
+		if ( $alchemists_data['alchemists__custom_nav-secondary-font'] ) {
+			$vars['nav-secondary-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-family'] : 'Exo 2, sans-serif';
+
+			$vars['nav-secondary-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['text-transform'] : 'uppercase';
+
+			$vars['nav-secondary-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-weight'] : '700';
+
+			$vars['nav-secondary-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-style'] : 'normal';
+
+			$vars['nav-secondary-font-size'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-size'] : '12px';
+
+
+			$vars['nav-secondary-sub-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] : 'Exo 2, sans-serif';
+
+			$vars['nav-secondary-sub-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] : 'uppercase';
+
+			$vars['nav-secondary-sub-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] : '700';
+
+			$vars['nav-secondary-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] : 'normal';
+
+			$vars['nav-secondary-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] : '11px';
+		}
+
+
 		// Preloader
 		if ( $alchemists_data['alchemists__opt-custom_pageloader'] ) {
 
@@ -618,6 +691,9 @@ function df_scss_vars( $vars, $handle ) {
 	
 			// Header Primary Height
 			$vars['nav-height'] = ( isset( $alchemists_data['alchemists__header-primary-height'] ) && !empty( $alchemists_data['alchemists__header-primary-height'] )) ? $alchemists_data['alchemists__header-primary-height'] . 'px' : '70px'; // done
+
+			// Header Tertiary Height
+			$vars['nav-secondary-height'] = ( isset( $alchemists_data['alchemists__header-tertiary-height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-height'] )) ? $alchemists_data['alchemists__header-tertiary-height'] . 'px' : '62px';
 	
 			// Mobile Nav Width
 			$nav_mobile_fullwidth = isset( $alchemists_data['alchemists__mobile-nav-fullwidth'] ) ? $alchemists_data['alchemists__mobile-nav-fullwidth'] : 0; // done
@@ -785,6 +861,51 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['header-info-block-link-color-mobile-hover'] = ( isset( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) && !empty( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) )  ? $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] : '#fff'; // done
 
 
+			// Header Tertiary Background
+			$vars['header-tertiary-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-bg'] ) )  ? $alchemists_data['alchemists__header-tertiary-bg'] : '#fff';
+
+			// Header Tertiary Heading Color
+			$vars['nav-secondary-heading'] = ( isset( $alchemists_data['alchemists__header-tertiary-heading-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-heading-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-heading-color'] : $vars['color-dark'];
+
+			// Header Tertiary Toggle Color
+			$vars['nav-secondary-mobile-toggle'] = ( isset( $alchemists_data['alchemists__header-tertiary-toggle-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-toggle-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-toggle-color'] : '#9a9da2';
+
+			// Header Tertiary Links Color
+			$vars['nav-secondary-font-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] : '#fff';
+			$vars['nav-secondary-font-color-hover'] = ( isset( $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] : $vars['color-primary'];
+
+			// Header Tertiary Link Border Height
+			$vars['nav-secondary-active-border-height'] = ( isset( $alchemists_data['alchemists__header-tertiary-border-height']['height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-border-height']['height'] ) )  ? $alchemists_data['alchemists__header-tertiary-border-height']['height'] : '0px';
+
+			// Header Tertiary Link Border Color
+			$vars['nav-secondary-active-border-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-border-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-border-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-border-color'] : $vars['color-primary'];
+
+			// Header Tertiary Link Background Color
+			$vars['nav-secondary-active-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-background-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-background-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-background-color'] : 'transparent';
+
+			// Header Tertiary Submenu Background Color
+			$vars['nav-secondary-sub-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-bg'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-bg'] : '#fff';
+
+			// Header Tertiary Submenu Border Color
+			$vars['nav-secondary-sub-border-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-border-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-border-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-border-color'] : '#e4e7ed'; // done
+
+			// Header Submenu Link Color
+			$vars['nav-secondary-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] : $vars['color-dark'];
+			$vars['nav-secondary-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] : $vars['color-dark'];
+
+			// Mobile Nav Links Color
+			$vars['nav-secondary-mobile-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-link-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-link-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-link-color'] : $vars['color-dark'];
+
+			// Mobile Nav Submenu Background Color
+			$vars['nav-secondary-mobile-sub-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] : '#e4e7ed';
+
+			// Mobile Nav Submenu Border Color
+			$vars['nav-secondary-mobile-border'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-border'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-border'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-border'] : '#e4e7ed';
+
+			// Mobile Nav Submenu Links Color
+			$vars['nav-secondary-mobile-sub-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] : $vars['color-dark'];
+
+
 			// Search Form
 
 			// background color - desktop
@@ -937,6 +1058,31 @@ function df_scss_vars( $vars, $handle ) {
 	
 				$vars['nav-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-size'] : '12px'; // done
 			}
+
+
+			// Secondary Navigation
+			if ( $alchemists_data['alchemists__custom_nav-secondary-font'] ) {
+				$vars['nav-secondary-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-family'] : 'Roboto Condensed, sans-serif';
+	
+				$vars['nav-secondary-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['text-transform'] : 'uppercase';
+	
+				$vars['nav-secondary-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-weight'] : '700';
+	
+				$vars['nav-secondary-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-style'] : 'italic';
+	
+				$vars['nav-secondary-font-size'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-size'] : '14px';
+	
+	
+				$vars['nav-secondary-sub-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] : 'Roboto Condensed, sans-serif';
+	
+				$vars['nav-secondary-sub-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] : 'uppercase';
+	
+				$vars['nav-secondary-sub-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] : '700';
+	
+				$vars['nav-secondary-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] : 'italic';
+	
+				$vars['nav-secondary-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] : '12px';
+			}
 	
 	
 			// Preloader
@@ -1050,6 +1196,9 @@ function df_scss_vars( $vars, $handle ) {
 
 		// Header Primary Height
 		$vars['nav-height'] = ( isset( $alchemists_data['alchemists__header-primary-height'] ) && !empty( $alchemists_data['alchemists__header-primary-height'] )) ? $alchemists_data['alchemists__header-primary-height'] . 'px' : '62px';
+
+		// Header Tertiary Height
+		$vars['nav-secondary-height'] = ( isset( $alchemists_data['alchemists__header-tertiary-height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-height'] )) ? $alchemists_data['alchemists__header-tertiary-height'] . 'px' : '62px';
 
 		// Mobile Nav Width
 		$nav_mobile_fullwidth = isset( $alchemists_data['alchemists__mobile-nav-fullwidth'] ) ? $alchemists_data['alchemists__mobile-nav-fullwidth'] : 0;
@@ -1277,6 +1426,51 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['header-info-block-link-color-mobile-hover'] = ( isset( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) && !empty( $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] ) )  ? $alchemists_data['alchemists__header-info-link-color-mobile']['hover'] : '#fff';
 
 
+		// Header Tertiary Background
+		$vars['header-tertiary-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-bg'] ) )  ? $alchemists_data['alchemists__header-tertiary-bg'] : '#fff';
+
+		// Header Tertiary Heading Color
+		$vars['nav-secondary-heading'] = ( isset( $alchemists_data['alchemists__header-tertiary-heading-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-heading-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-heading-color'] : $vars['color-2'];
+
+		// Header Tertiary Toggle Color
+		$vars['nav-secondary-mobile-toggle'] = ( isset( $alchemists_data['alchemists__header-tertiary-toggle-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-toggle-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-toggle-color'] : '#9a9da2';
+
+		// Header Tertiary Links Color
+		$vars['nav-secondary-font-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-tertiary-nav-link-color']['regular'] : $vars['color-2'];
+		$vars['nav-secondary-font-color-hover'] = ( isset( $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-tertiary-nav-link-color']['hover'] : $vars['color-primary'];
+
+		// Header Tertiary Link Border Height
+		$vars['nav-secondary-active-border-height'] = ( isset( $alchemists_data['alchemists__header-tertiary-border-height']['height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-border-height']['height'] ) )  ? $alchemists_data['alchemists__header-tertiary-border-height']['height'] : '2px';
+
+		// Header Tertiary Link Border Color
+		$vars['nav-secondary-active-border-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-border-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-border-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-border-color'] : $vars['color-primary'];
+
+		// Header Tertiary Link Background Color
+		$vars['nav-secondary-active-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-background-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-background-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-background-color'] : 'transparent';
+
+		// Header Tertiary Submenu Background Color
+		$vars['nav-secondary-sub-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-bg'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-bg'] : '#fff';
+
+		// Header Tertiary Submenu Border Color
+		$vars['nav-secondary-sub-border-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-border-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-border-color'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-border-color'] : '#e4e7ed';
+
+		// Header Submenu Link Color
+		$vars['nav-secondary-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-link-color']['regular'] : $vars['color-dark'];
+		$vars['nav-secondary-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-tertiary-submenu-link-color']['hover'] : $vars['color-dark'];
+
+		// Mobile Nav Links Color
+		$vars['nav-secondary-mobile-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-link-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-link-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-link-color'] : $vars['color-2'];
+
+		// Mobile Nav Submenu Background Color
+		$vars['nav-secondary-mobile-sub-bg'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-sub-bg'] : '#e4e7ed';
+
+		// Mobile Nav Submenu Border Color
+		$vars['nav-secondary-mobile-border'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-border'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-border'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-border'] : '#e4e7ed';
+
+		// Mobile Nav Submenu Links Color
+		$vars['nav-secondary-mobile-sub-color'] = ( isset( $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] ) && !empty( $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] ) ) ? $alchemists_data['alchemists__header-tertiary-mobile-sub-link-color'] : $vars['color-2'];
+
+
 		// Search Form
 
 		// background color - desktop
@@ -1429,6 +1623,21 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['nav-sub-font-weight'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-weight'] : '700';
 			$vars['nav-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-style'] : 'normal';
 			$vars['nav-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-font-sub']['font-size'] : '11px';
+		}
+
+		// Secondary Navigation
+		if ( $alchemists_data['alchemists__custom_nav-secondary-font'] ) {
+			$vars['nav-secondary-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-family'] : 'Montserrat, sans-serif';
+			$vars['nav-secondary-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['text-transform'] : 'uppercase';
+			$vars['nav-secondary-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-weight'] : '700';
+			$vars['nav-secondary-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-style'] : 'normal';
+			$vars['nav-secondary-font-size'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-size'] : '12px';
+
+			$vars['nav-secondary-sub-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-family'] : 'Montserrat, sans-serif';
+			$vars['nav-secondary-sub-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['text-transform'] : 'uppercase';
+			$vars['nav-secondary-sub-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] : '700';
+			$vars['nav-secondary-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] : 'normal';
+			$vars['nav-secondary-sub-font-size'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] : '11px';
 		}
 
 		// Preloader

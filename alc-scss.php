@@ -557,7 +557,9 @@ function df_scss_vars( $vars, $handle ) {
 
 
 		// Secondary Navigation
-		if ( $alchemists_data['alchemists__custom_nav-secondary-font'] ) {
+		$alchemists__custom_nav_secondary_font = ( isset( $alchemists_data['alchemists__custom_nav-secondary-font'] ) && !empty( $alchemists_data['alchemists__custom_nav-secondary-font'] ) ) ? $alchemists_data['alchemists__custom_nav-secondary-font'] : 0;
+		
+		if ( $alchemists__custom_nav_secondary_font ) {
 			$vars['nav-secondary-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-family'] : 'Exo 2, sans-serif';
 
 			$vars['nav-secondary-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['text-transform'] : 'uppercase';
@@ -1061,7 +1063,9 @@ function df_scss_vars( $vars, $handle ) {
 
 
 			// Secondary Navigation
-			if ( $alchemists_data['alchemists__custom_nav-secondary-font'] ) {
+			$alchemists__custom_nav_secondary_font = ( isset( $alchemists_data['alchemists__custom_nav-secondary-font'] ) && !empty( $alchemists_data['alchemists__custom_nav-secondary-font'] ) ) ? $alchemists_data['alchemists__custom_nav-secondary-font'] : 0;
+
+			if ( $alchemists__custom_nav_secondary_font ) {
 				$vars['nav-secondary-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-family'] : 'Roboto Condensed, sans-serif';
 	
 				$vars['nav-secondary-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['text-transform'] : 'uppercase';
@@ -1626,7 +1630,9 @@ function df_scss_vars( $vars, $handle ) {
 		}
 
 		// Secondary Navigation
-		if ( $alchemists_data['alchemists__custom_nav-secondary-font'] ) {
+		$alchemists__custom_nav_secondary_font = ( isset( $alchemists_data['alchemists__custom_nav-secondary-font'] ) && !empty( $alchemists_data['alchemists__custom_nav-secondary-font'] ) ) ? $alchemists_data['alchemists__custom_nav-secondary-font'] : 0;
+
+		if ( $alchemists__custom_nav_secondary_font ) {
 			$vars['nav-secondary-font-family'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-family'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-family'] : 'Montserrat, sans-serif';
 			$vars['nav-secondary-text-transform'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['text-transform'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['text-transform'] : 'uppercase';
 			$vars['nav-secondary-font-weight'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-weight'] : '700';

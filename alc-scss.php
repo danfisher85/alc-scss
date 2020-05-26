@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.2.1
+ * Version: 4.2.3
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
 		define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-		define('DFSCSS_VERSION_NUM', '4.2.0');
+		define('DFSCSS_VERSION_NUM', '4.2.3');
 
 
 
@@ -290,6 +290,9 @@ function df_scss_vars( $vars, $handle ) {
 		// Header Submenu Link Color
 		$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : '#fff';
 		$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-4'];
+
+		// Header Submenu Background Color
+		$vars['nav-sub-hover-bg-color'] = isset( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) ? $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] : $vars['color-dark'];
 
 		// Header Submenu Caret Color
 		$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : '#fff';
@@ -675,7 +678,7 @@ function df_scss_vars( $vars, $handle ) {
 
 
 			// Form
-			$vars['input-bg'] = isset( $alchemists_data['alchemists__form-control']['regular'] ) && !empty( $alchemists_data['alchemists__form-control']['regular'] ) ? $alchemists_data['alchemists__form-control']['regular'] : 'rgba(0,0,0,0.05)';
+			$vars['input-bg'] = isset( $alchemists_data['alchemists__form-control']['regular'] ) && !empty( $alchemists_data['alchemists__form-control']['regular'] ) ? $alchemists_data['alchemists__form-control']['regular'] : $vars['color-dark'];
 			$vars['input-bg-focus'] = isset( $alchemists_data['alchemists__form-control']['active'] ) && !empty( $alchemists_data['alchemists__form-control']['active'] ) ? $alchemists_data['alchemists__form-control']['active'] : $vars['input-bg'];
 
 			$vars['input-border'] = isset( $alchemists_data['alchemists__form-control-border']['regular'] ) && !empty( $alchemists_data['alchemists__form-control-border']['regular'] ) ? $alchemists_data['alchemists__form-control-border']['regular'] : '#4b3b60';
@@ -796,6 +799,9 @@ function df_scss_vars( $vars, $handle ) {
 			// Header Submenu Link Color
 			$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : '#fff'; // done
 			$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-primary']; // done
+
+			// Header Submenu Background Color
+			$vars['nav-sub-hover-bg-color'] = isset( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) ? $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] : $vars['color-dark'];
 	
 			// Header Submenu Caret Color
 			$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : '#fff'; // done
@@ -1324,6 +1330,9 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : '#fff';
 			$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-4'];
 
+			// Header Submenu Background Color
+			$vars['nav-sub-hover-bg-color'] = isset( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) ? $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] : 'transparent';
+
 			// Header Submenu Caret Color
 			$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : '#fff';
 
@@ -1358,6 +1367,9 @@ function df_scss_vars( $vars, $handle ) {
 			// Header Submenu Link Color
 			$vars['nav-sub-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['regular'] : $vars['color-2'];
 			$vars['nav-sub-hover-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-submenu-link-color']['hover'] : $vars['color-2'];
+
+			// Header Submenu Background Color
+			$vars['nav-sub-hover-bg-color'] = isset( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] ) ? $alchemists_data['alchemists__header-primary-submenu-hover-bg-color'] : 'rgba(228, 231, 237, 0.2)';
 
 			// Header Submenu Caret Color
 			$vars['nav-sub-caret-color'] = ( isset( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) && !empty( $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] ) ) ? $alchemists_data['alchemists__header-primary-submenu-dropdown-caret-color'] : $vars['color-2'];

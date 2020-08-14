@@ -3,10 +3,10 @@
 /**
  * WP_SCSS_Compiler
  *
- * Class providing integration between WordPress and PHP SCSS Compiler by @leafo
+ * Class providing integration between WordPress and PHP SCSS Compiler by @ScssPhp
  *
  * @author Roman Nazarkin <roman@nazarkin.su>
- * @uses Leafo\ScssPhp
+ * @uses ScssPhp\ScssPhp
  * @license GNU GPLv3
  */
 
@@ -139,10 +139,10 @@ class WP_SCSS_Compiler {
 			// start working
 			try {
 				$output_path = $this->get_output_path( $handle );
-				$scss        = new Leafo\ScssPhp\Compiler();
+				$scss        = new ScssPhp\ScssPhp\Compiler();
 				$scss->setVariables( apply_filters( 'wp_scss_variables', array(), $handle ) );
 				$scss->setImportPaths( apply_filters( 'wp_scss_import_dirs', array( dirname( $scss_path ) ), $handle ) );
-				$scss->setFormatter( apply_filters( 'wp_scss_formatter', 'Leafo\ScssPhp\Formatter\Compressed', $handle ) );
+				$scss->setFormatter( apply_filters( 'wp_scss_formatter', 'ScssPhp\ScssPhp\Formatter\Compressed', $handle ) );
 
 				// allow devs to mess around with the scss object configuration
 				do_action_ref_array( 'wp_scss_instance', array( &$scss, $handle ) );
@@ -210,7 +210,7 @@ class WP_SCSS_Compiler {
 	 * Check whether provided file should be recompiled
 	 *
 	 * @param $output_path string destination file
-	 * @param $scss        Leafo\ScssPhp\Compiler the instance of an compiler
+	 * @param $scss        ScssPhp\ScssPhp\Compiler the instance of an compiler
 	 *
 	 * @return bool
 	 */
@@ -249,7 +249,7 @@ class WP_SCSS_Compiler {
 	 *
 	 * @param $scss_path   string source path
 	 * @param $output_path string destination path
-	 * @param $scss        Leafo\ScssPhp\Compiler instance
+	 * @param $scss        ScssPhp\ScssPhp\Compiler instance
 	 */
 	private function compile_file( $scss_path, $output_path, &$scss ) {
 		$instance_dump = crc32( serialize( $scss ) );
@@ -258,7 +258,7 @@ class WP_SCSS_Compiler {
 		$css     = $scss->compile( file_get_contents( $scss_path ), $scss_path );
 		$elapsed = round( ( microtime( true ) - $start ), 4 );
 
-		$v   = Leafo\ScssPhp\Version::VERSION;
+		$v   = ScssPhp\ScssPhp\Version::VERSION;
 		$t   = date( 'r' );
 		$css = "/* compiled by wp scssphp $v on $t (${elapsed}s) */\n\n" . $css;
 

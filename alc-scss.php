@@ -48,7 +48,7 @@ include_once DFSCSS_PLUGIN_DIR . '/compiler/WP_SCSS_Compiler.php'; // SCSS Compi
  * 3. ENQUEUE STYLES
  */
 
-add_action( 'wp_enqueue_scripts', 'df_enqueue_styles', 20 );
+add_action( 'wp_enqueue_scripts', 'df_enqueue_styles', 98 );
 function df_enqueue_styles() {
 
 	$sport = 'basketball';

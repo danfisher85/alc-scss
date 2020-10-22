@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.3.0
+ * Version: 4.3.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
 		define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-		define('DFSCSS_VERSION_NUM', '4.2.3');
+		define('DFSCSS_VERSION_NUM', '4.3.1');
 
 
 
@@ -316,8 +316,8 @@ function df_scss_vars( $vars, $handle ) {
 
 
 		// Social Link Color
-		$vars['header-social-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-social-link-color']['regular'] : '#fff';
-		$vars['header-social-link-color-hover'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-social-link-color']['hover'] : $colors['color_primary'];
+		$vars['header-social-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) ) ? $alchemists_data['alchemists__header-primary-social-link-color']['regular'] : '#fff';
+		$vars['header-social-link-color-hover'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) ) ? $alchemists_data['alchemists__header-primary-social-link-color']['hover'] : $vars['color-primary'];
 		
 
 		// Mobile Nav Background Color
@@ -1415,8 +1415,8 @@ function df_scss_vars( $vars, $handle ) {
 
 
 		// Social Link Color
-		$vars['header-social-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-primary-social-link-color']['regular'] : '#fff';
-		$vars['header-social-link-color-hover'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-primary-social-link-color']['hover'] : $colors['color_primary'];
+		$vars['header-social-link-color'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['regular'] ) ) ? $alchemists_data['alchemists__header-primary-social-link-color']['regular'] : '#fff';
+		$vars['header-social-link-color-hover'] = ( isset( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-primary-social-link-color']['hover'] ) ) ? $alchemists_data['alchemists__header-primary-social-link-color']['hover'] : $vars['color-primary'];
 
 
 		// Header Info Block

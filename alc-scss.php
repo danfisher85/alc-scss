@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.3.1
+ * Version: 4.4.0
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
 		define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-		define('DFSCSS_VERSION_NUM', '4.3.1');
+		define('DFSCSS_VERSION_NUM', '4.4.0');
 
 
 
@@ -261,6 +261,9 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['top-bar-dropdown-border'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] : 'rgba(255,255,255,.03)';
 		$vars['top-bar-dropdown-link-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['regular'] : $vars['color-gray'];
 		$vars['top-bar-dropdown-link-color-hover'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['hover'] : $vars['color-4'];
+		$vars['top-bar-social-icon-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] : $vars['color-gray'];
+		$vars['top-bar-social-icon-color-hover'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] : $vars['color-4'];
+		$vars['top-bar-social-icon-opacity'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-opacity'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-opacity'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-opacity'] : '0.6';
 
 		// Header Secondary Background
 		$vars['header-bg'] = ( isset( $alchemists_data['alchemists__header-secondary-bg'] ) && !empty( $alchemists_data['alchemists__header-secondary-bg'] ) ) ? $alchemists_data['alchemists__header-secondary-bg'] : $vars['color-dark-2'];
@@ -771,6 +774,9 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['top-bar-dropdown-border'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] : '#4b3b60'; // done
 			$vars['top-bar-dropdown-link-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['regular'] ) )  ? $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['regular'] : '#fff'; // done
 			$vars['top-bar-dropdown-link-color-hover'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['hover'] ) )  ? $alchemists_data['alchemists__header-top-bar-dropdown-link-color']['hover'] : $vars['color-primary']; // done
+			$vars['top-bar-social-icon-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] : '#7a7283';
+			$vars['top-bar-social-icon-color-hover'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] : $vars['color-primary'];
+			$vars['top-bar-social-icon-opacity'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-opacity'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-opacity'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-opacity'] : '0.6';
 	
 			// Header Secondary Background
 			$vars['header-bg'] = ( isset( $alchemists_data['alchemists__header-secondary-bg'] ) && !empty( $alchemists_data['alchemists__header-secondary-bg'] ) ) ? $alchemists_data['alchemists__header-secondary-bg'] : $vars['color-dark-2']; // done
@@ -1285,6 +1291,9 @@ function df_scss_vars( $vars, $handle ) {
 		$vars['top-bar-divider-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-divider-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-divider-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-divider-color'] : $vars['top-bar-text-color'];
 		$vars['top-bar-dropdown-bg'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-bg'] ) ) ? $alchemists_data['alchemists__header-top-bar-dropdown-bg'] : '#fff';
 		$vars['top-bar-dropdown-border'] = ( isset( $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] ) && !empty( $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] ) ) ? $alchemists_data['alchemists__header-top-bar-dropdown-border-color'] : 'rgba(255,255,255,.03)';
+		$vars['top-bar-social-icon-color'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-color']['regular'] : $vars['color-gray'];
+		$vars['top-bar-social-icon-color-hover'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-color']['hover'] : $vars['color-primary'];
+		$vars['top-bar-social-icon-opacity'] = ( isset( $alchemists_data['alchemists__header-top-bar-social-link-opacity'] ) && !empty( $alchemists_data['alchemists__header-top-bar-social-link-opacity'] ) ) ? $alchemists_data['alchemists__header-top-bar-social-link-opacity'] : '0.6';
 
 
 		if ( alchemists_sp_preset('soccer') ) {

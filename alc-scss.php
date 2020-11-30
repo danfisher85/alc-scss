@@ -248,12 +248,17 @@ function df_scss_vars( $vars, $handle ) {
 
 
 		// Button Primary Inverse Color
-		$vars['btn-primary-inverse-color'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] : '#fff';
+		if ( isset( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) ) {
+			$vars['btn-primary-inverse-color'] = $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'];
+		}
 
 		// Button Primary Inverse Background Color
-		$vars['btn-primary-inverse-bg'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] : $vars['color-primary'];
-		$vars['btn-primary-inverse-hover'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] : $vars['color-primary-darken'];
-
+		if ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) ) {
+			$vars['btn-primary-inverse-bg'] = $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'];
+		}
+		if ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) ) {
+			$vars['btn-primary-inverse-hover'] = $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'];
+		}
 
 		// Top Bar
 		if ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) {
@@ -819,11 +824,17 @@ function df_scss_vars( $vars, $handle ) {
 
 
 			// Button Primary Inverse Color
-			$vars['btn-primary-inverse-color'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] : '#fff';
+			if ( isset( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) ) {
+				$vars['btn-primary-inverse-color'] = $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'];
+			}
 
 			// Button Primary Inverse Background Color
-			$vars['btn-primary-inverse-bg'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] : $vars['color-primary-darken'];
-			$vars['btn-primary-inverse-hover'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] : $vars['color-primary'];
+			if ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) ) {
+				$vars['btn-primary-inverse-bg'] = $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'];
+			}
+			if ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) ) {
+				$vars['btn-primary-inverse-hover'] = $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'];
+			}
 
 	
 			// Top Bar
@@ -1385,18 +1396,17 @@ function df_scss_vars( $vars, $handle ) {
 
 
 		// Button Primary Inverse Color
-		$vars['btn-primary-inverse-color'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] : '#fff';
-
-		if ( alchemists_sp_preset('soccer') ) {
-			// Button Primary Inverse Background Color
-			$vars['btn-primary-inverse-bg'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] : $vars['color-primary'];
-			$vars['btn-primary-inverse-hover'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] : $vars['color-primary-darken'];
-		} else {
-			// Button Primary Inverse Background Color
-			$vars['btn-primary-inverse-bg'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] : $vars['color-primary-darken'];
-			$vars['btn-primary-inverse-hover'] = ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] )) ? $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] : $vars['color-3'];
+		if ( isset( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'] ) ) {
+			$vars['btn-primary-inverse-color'] = $alchemists_data['alchemists__button_primary_inverse_txt_color']['regular'];
 		}
 
+		// Button Primary Inverse Background Color
+		if ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'] ) ) {
+			$vars['btn-primary-inverse-bg'] = $alchemists_data['alchemists__button_primary_inverse_bg_color']['regular'];
+		}
+		if ( isset( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) && !empty( $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'] ) ) {
+			$vars['btn-primary-inverse-hover'] = $alchemists_data['alchemists__button_primary_inverse_bg_color']['hover'];
+		}
 
 		// Top Bar
 		if ( isset( $alchemists_data['alchemists__header-top-bar-bg'] ) && !empty( $alchemists_data['alchemists__header-top-bar-bg'] ) ) {

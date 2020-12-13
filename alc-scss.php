@@ -202,6 +202,12 @@ function df_scss_vars( $vars, $handle ) {
 	}
 
 
+	// Progress Bars
+	if ( isset( $alchemists_data['alchemists__progress-bars-track-color'] ) && !empty( $alchemists_data['alchemists__progress-bars-track-color'] ) ) {
+		$vars['progress-bg'] = $alchemists_data['alchemists__progress-bars-track-color'];
+	}
+
+
 	// Header Primary Height
 	if ( isset( $alchemists_data['alchemists__header-primary-height'] ) && !empty( $alchemists_data['alchemists__header-primary-height'] ) ) {
 		$vars['nav-height'] = $alchemists_data['alchemists__header-primary-height'] . 'px';

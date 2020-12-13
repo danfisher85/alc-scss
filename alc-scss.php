@@ -53,12 +53,14 @@ function df_enqueue_styles() {
 
 	$sport = 'basketball';
 
-	if ( alchemists_sp_preset('soccer') ) {
-		$sport = 'soccer';
-	} elseif ( alchemists_sp_preset('football') ) {
-		$sport = 'football';
-	} elseif ( alchemists_sp_preset('esports') ) {
-		$sport = 'esports';
+	if ( function_exists( 'alchemists_sp_preset' ) ) {
+		if ( alchemists_sp_preset('soccer') ) {
+			$sport = 'soccer';
+		} elseif ( alchemists_sp_preset('football') ) {
+			$sport = 'football';
+		} elseif ( alchemists_sp_preset('esports') ) {
+			$sport = 'esports';
+		}
 	}
 
 	// Check if language is RTL
@@ -128,9 +130,11 @@ function df_scss_vars( $vars, $handle ) {
 	}
 
 	// Soccer
-	if ( alchemists_sp_preset('soccer') ) {
-		if ( isset( $alchemists_data['color-4-darken'] ) && !empty( $alchemists_data['color-4-darken'] ) ) {
-			$vars['color-4-darken'] = $alchemists_data['color-4-darken'];
+	if ( function_exists( 'alchemists_sp_preset' ) ) {
+		if ( alchemists_sp_preset('soccer') ) {
+			if ( isset( $alchemists_data['color-4-darken'] ) && !empty( $alchemists_data['color-4-darken'] ) ) {
+				$vars['color-4-darken'] = $alchemists_data['color-4-darken'];
+			}
 		}
 	}
 
@@ -219,6 +223,11 @@ function df_scss_vars( $vars, $handle ) {
 		if ( isset( $alchemists_data['alchemists__mobile-nav-width'] ) && !empty( $alchemists_data['alchemists__mobile-nav-width'] ) ) {
 			$vars['nav-mobile-width'] = $alchemists_data['alchemists__mobile-nav-width'] . 'px';
 		}
+	}
+
+	// Mobile Nav Height
+	if ( isset( $alchemists_data['alchemists__mobile-nav-height'] ) && !empty( $alchemists_data['alchemists__mobile-nav-height'] ) ) {
+		$vars['header-mobile-height'] = $alchemists_data['alchemists__mobile-nav-height'] . 'px';
 	}
 
 

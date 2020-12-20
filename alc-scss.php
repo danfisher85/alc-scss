@@ -745,6 +745,14 @@ function df_scss_vars( $vars, $handle ) {
 			$vars['footer-widgets-bg'] = 'url(' . $alchemists_data['alchemists__footer-widgets-bg']['background-image'] . ')';
 		} elseif ( ! $is_footer_bg_img && $is_footer_bg_color ) {
 			$vars['footer-widgets-bg'] = $alchemists_data['alchemists__footer-widgets-bg']['background-color'];
+		} else {
+			if ( alchemists_sp_preset('esports') ) {
+				$vars['footer-widgets-bg'] = '#3b2f4c url("' . get_template_directory_uri() . '/assets/images/esports/samples/footer-bg.jpg") no-repeat center top/cover';
+			}
+		}
+	} else {
+		if ( alchemists_sp_preset('esports') ) {
+			$vars['footer-widgets-bg'] = '#3b2f4c url("' . get_template_directory_uri() . '/assets/images/esports/samples/footer-bg.jpg") no-repeat center top/cover';
 		}
 	}
 

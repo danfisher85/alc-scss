@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.4.0
+ * Version: 4.4.1
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -214,8 +214,8 @@ function df_scss_vars( $vars, $handle ) {
 	}
 
 
-	// Header Tertiary Height
-	if ( isset( $alchemists_data['alchemists__header-tertiary-height'] ) && !empty( $alchemists_data['alchemists__header-tertiary-height'] ) ) {
+	// Header Tertiary Height (can be 0)
+	if ( isset( $alchemists_data['alchemists__header-tertiary-height'] ) && $alchemists_data['alchemists__header-tertiary-height'] != '' ) {
 		$vars['nav-secondary-height'] = $alchemists_data['alchemists__header-tertiary-height'] . 'px';
 	}
 

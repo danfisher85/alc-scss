@@ -841,9 +841,7 @@ function df_scss_vars( $vars, $handle ) {
 		if ( isset( $alchemists_data['alchemists__nav-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-weight'] ) ) {
 			$vars['nav-font-weight'] = $alchemists_data['alchemists__nav-font']['font-weight'];
 		}
-		if ( isset( $alchemists_data['alchemists__nav-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-style'] ) ) {
-			$vars['nav-font-style'] = $alchemists_data['alchemists__nav-font']['font-style'];
-		}
+		$vars['nav-font-style'] = ( isset( $alchemists_data['alchemists__nav-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-style'] ) ) ? $alchemists_data['alchemists__nav-font']['font-style'] : 'normal';
 		if ( isset( $alchemists_data['alchemists__nav-font']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-font']['font-size'] ) ) {
 			$vars['nav-font-size'] = $alchemists_data['alchemists__nav-font']['font-size'];
 		}
@@ -876,9 +874,8 @@ function df_scss_vars( $vars, $handle ) {
 		if ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-weight'] ) ) {
 			$vars['nav-secondary-font-weight'] = $alchemists_data['alchemists__nav-secondary-font']['font-weight'];
 		}
-		if ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) ) {
-			$vars['nav-secondary-font-style'] = $alchemists_data['alchemists__nav-secondary-font']['font-style'];
-		}
+		$vars['nav-secondary-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font']['font-style'] : 'normal';
+
 		if ( isset( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font']['font-size'] ) ) {
 			$vars['nav-secondary-font-size'] = $alchemists_data['alchemists__nav-secondary-font']['font-size'];
 		}
@@ -891,9 +888,7 @@ function df_scss_vars( $vars, $handle ) {
 		if ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'] ) ) {
 			$vars['nav-secondary-sub-font-weight'] = $alchemists_data['alchemists__nav-secondary-font-sub']['font-weight'];
 		}
-		if ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) ) {
-			$vars['nav-secondary-sub-font-style'] = $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'];
-		}
+		$vars['nav-secondary-sub-font-style'] = ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] ) ) ? $alchemists_data['alchemists__nav-secondary-font-sub']['font-style'] : 'normal';
 		if ( isset( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) && !empty( $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'] ) ) {
 			$vars['nav-secondary-sub-font-size'] = $alchemists_data['alchemists__nav-secondary-font-sub']['font-size'];
 		}

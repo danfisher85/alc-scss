@@ -3,7 +3,7 @@
  * Plugin Name: Alchemists SCSS Compiler
  * Plugin URI: https://github.com/danfisher85/alc-scss
  * Description: Compiles SCSS to CSS for Alchemists WP Theme.
- * Version: 4.4.1
+ * Version: 4.4.2
  * Author: Dan Fisher
  * Author URI: https://themeforest.net/user/dan_fisher
  */
@@ -31,7 +31,7 @@ if (!defined('DFSCSS_VERSION_KEY'))
 		define('DFSCSS_VERSION_KEY', 'dfscss_version');
 
 if (!defined('DFSCSS_VERSION_NUM'))
-		define('DFSCSS_VERSION_NUM', '4.4.0');
+		define('DFSCSS_VERSION_NUM', '4.4.2');
 
 
 
@@ -782,6 +782,20 @@ function df_scss_vars( $vars, $handle ) {
 	}
 	if ( isset( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'] ) ) {
 		$vars['footer-widget-link-color-hover'] = $alchemists_data['alchemists__footer-widgets-list-link-color']['hover'];
+	}
+
+	if ( isset( $alchemists_data['alchemists__footer-contact-info-social-link-color']['regular'] ) && !empty( $alchemists_data['alchemists__footer-contact-info-social-link-color']['regular'] ) ) {
+		$vars['footer-contact-info-social-link-color'] = $alchemists_data['alchemists__footer-contact-info-social-link-color']['regular'];
+	}
+	if ( isset( $alchemists_data['alchemists__footer-contact-info-social-link-color']['hover'] ) && !empty( $alchemists_data['alchemists__footer-contact-info-social-link-color']['hover'] ) ) {
+		$vars['footer-contact-info-social-link-color-hover'] = $alchemists_data['alchemists__footer-contact-info-social-link-color']['hover'];
+	}
+
+	if ( isset( $alchemists_data['alchemists__footer-contact-info-social-icon-color']['regular'] ) && !empty( $alchemists_data['alchemists__footer-contact-info-social-icon-color']['regular'] ) ) {
+		$vars['footer-contact-info-social-icon-color'] = $alchemists_data['alchemists__footer-contact-info-social-icon-color']['regular'];
+	}
+	if ( isset( $alchemists_data['alchemists__footer-contact-info-social-icon-color']['hover'] ) && !empty( $alchemists_data['alchemists__footer-contact-info-social-icon-color']['hover'] ) ) {
+		$vars['footer-contact-info-social-icon-color-hover'] = $alchemists_data['alchemists__footer-contact-info-social-icon-color']['hover'];
 	}
 	
 	

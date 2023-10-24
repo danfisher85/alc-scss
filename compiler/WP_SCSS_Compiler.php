@@ -16,6 +16,8 @@ require_once DFSCSS_PLUGIN_DIR . '/scssphp/scss.inc.php';
 // add on init to support theme customizer in v3.4
 add_action( 'init', array( 'WP_SCSS_Compiler', 'instance' ) );
 
+use ScssPhp\ScssPhp\OutputStyle;
+
 class WP_SCSS_Compiler {
 
 	/**
@@ -140,9 +142,19 @@ class WP_SCSS_Compiler {
 			try {
 				$output_path = $this->get_output_path( $handle );
 				$scss        = new ScssPhp\ScssPhp\Compiler();
-				$scss->setVariables( apply_filters( 'wp_scss_variables', array(), $handle ) );
+
+				// Convert custom variables to ScssPhp\ScssPhp\Value objects
+        $custom_variables = apply_filters('wp_scss_variables', array(), $handle);
+        $parsed_variables = [];
+        foreach ($custom_variables as $name => $value) {
+					$parsed_value = ScssPhp\ScssPhp\ValueConverter::parseValue($value);
+					$parsed_variables[$name] = $parsed_value;
+        }
+
+        $scss->addVariables($parsed_variables);
+
 				$scss->setImportPaths( apply_filters( 'wp_scss_import_dirs', array( dirname( $scss_path ) ), $handle ) );
-				$scss->setFormatter( apply_filters( 'wp_scss_formatter', 'ScssPhp\ScssPhp\Formatter\Compressed', $handle ) );
+				$scss->setOutputStyle( OutputStyle::COMPRESSED, $handle );
 
 				// allow devs to mess around with the scss object configuration
 				do_action_ref_array( 'wp_scss_instance', array( &$scss, $handle ) );

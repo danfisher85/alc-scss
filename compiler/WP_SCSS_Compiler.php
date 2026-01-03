@@ -266,19 +266,38 @@ class WP_SCSS_Compiler {
 	private function compile_file( $scss_path, $output_path, &$scss ) {
 		$instance_dump = crc32( serialize( $scss ) );
 
-		$start   = microtime( true );
-		$css     = $scss->compile( file_get_contents( $scss_path ), $scss_path );
+		$start = microtime( true );
+		
+		// Use compileString() for newer versions, compile() for older versions
+		$scss_content = file_get_contents( $scss_path );
+		if ( method_exists( $scss, 'compileString' ) ) {
+			$result = $scss->compileString( $scss_content, $scss_path );
+			$css = $result->getCss();
+			$included_files = $result->getIncludedFiles();
+			
+			// Convert array of files to associative array with mtimes
+			$imports = array();
+			foreach ( $included_files as $file ) {
+				if ( file_exists( $file ) ) {
+					$imports[ $file ] = filemtime( $file );
+				}
+			}
+		} else {
+			$css = $scss->compile( $scss_content, $scss_path );
+			$imports = $scss->getParsedFiles();
+		}
+		
 		$elapsed = round( ( microtime( true ) - $start ), 4 );
 
 		$v   = ScssPhp\ScssPhp\Version::VERSION;
 		$t   = date( 'r' );
-		$css = "/* compiled by wp scssphp $v on $t (${elapsed}s) */\n\n" . $css;
+		$css = "/* compiled by wp scssphp $v on $t ({$elapsed}s) */\n\n" . $css;
 
 		file_put_contents( $output_path, $css );
 		$this->save_cache_data( $output_path,
 			array(
 				'creation_time' => time(),
-				'imports'       => $scss->getParsedFiles(),
+				'imports'       => $imports,
 				'instance'      => $instance_dump
 			) );
 	}
